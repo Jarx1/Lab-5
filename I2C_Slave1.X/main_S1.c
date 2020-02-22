@@ -33,6 +33,7 @@
 #include <stdint.h>
 #include <pic16f887.h>
 #include "I2C.h"
+#include "ADC.h"
 #include <xc.h>
 //*****************************************************************************
 // Definición de variables
@@ -77,10 +78,17 @@ void __interrupt() isr(void){
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
-        }
-       
+        }        
         PIR1bits.SSPIF = 0;    
     }
+   if (PIR1bits.ADIF==1){
+        INTCONbits.T0IE=0;
+        INTCONbits.GIE=0;
+        INTCONbits.RBIE=0;  
+        //d1 toma los valores del ADC
+        INTCONbits.T0IE=1;
+        PIR1bits.ADIF=0;
+   }
 }
 //*****************************************************************************
 // Main
@@ -91,9 +99,12 @@ void main(void) {
     // Loop infinito
     //*************************************************************************
     while(1){
-        --PORTB;
-       __delay_ms(500);
+        PORTB = ADRESH;
+        ADCON0bits.GO_DONE=1;
+        __delay_ms(10);
     }
+
+    
     return;
 }
 //*****************************************************************************
@@ -101,12 +112,19 @@ void main(void) {
 //*****************************************************************************
 void setup(void){
     ANSEL = 0;
+    
     ANSELH = 0;
     
     TRISB = 0;
     TRISD = 0;
+    TRISE = 0;
+    TRISEbits.TRISE0 = 1;
+    
     
     PORTB = 0;
     PORTD = 0;
+    ADC_init();
+    ADC_conf(0); 
+    
     I2C_Slave_Init(0x50);   
 }
