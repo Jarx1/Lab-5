@@ -44,9 +44,6 @@ uint8_t z;
 uint8_t i;
 uint8_t player1od = 0;
 uint8_t player2od = 0;
-uint8_t dato;
-int c;
-
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
@@ -80,15 +77,13 @@ void __interrupt() isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = PORTA;
+            SSPBUF = i;
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
         }        
         PIR1bits.SSPIF = 0;    
-    }
-
-   
+    }   
 }
 //*****************************************************************************
 // Main
@@ -100,20 +95,17 @@ void main(void) {
     //*************************************************************************
     while(1){
         if(player1==1 && player1od==0){   //Antirrebote, si el boton player1(RB7)
-            PORTA=i;             //esta presionado y su valor anterior era 0  
-            i++;                          //incrementa un contador y tiene un delay             
-            
+            i++;                          //incrementa un contador                    
         }
         player1od=player1; 
         if(player2==1 && player2od==0){
-            PORTA=i;
             i--;
         }
         player2od=player2;
-
-    }
-
-    
+        if(i>15){
+            i=0;
+        }
+    } 
     return;
 }
 //*****************************************************************************
@@ -122,17 +114,11 @@ void main(void) {
 void setup(void){
     ANSEL = 0;
     ANSELH = 0;
-    
-    TRISA = 0;
-    TRISB = 0;
+
     TRISD = 0;
     TRISDbits.TRISD6=1;
     TRISDbits.TRISD7=1;
-    TRISE = 0;
 
-    
-    PORTA = 0;
-    PORTB = 0;
     PORTD = 0;
     I2C_Slave_Init(0x30);   
 }

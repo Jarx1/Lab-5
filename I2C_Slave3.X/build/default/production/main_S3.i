@@ -2706,9 +2706,6 @@ uint8_t z;
 uint8_t i;
 uint8_t player1od = 0;
 uint8_t player2od = 0;
-uint8_t dato;
-int c;
-
 
 
 
@@ -2742,15 +2739,13 @@ void __attribute__((picinterrupt(("")))) isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = PORTA;
+            SSPBUF = i;
             SSPCONbits.CKP = 1;
             _delay((unsigned long)((250)*(8000000/4000000.0)));
             while(SSPSTATbits.BF);
         }
         PIR1bits.SSPIF = 0;
     }
-
-
 }
 
 
@@ -2762,20 +2757,17 @@ void main(void) {
 
     while(1){
         if(RD6==1 && player1od==0){
-            PORTA=i;
             i++;
-
         }
         player1od=RD6;
         if(RD7==1 && player2od==0){
-            PORTA=i;
             i--;
         }
         player2od=RD7;
-
+        if(i>15){
+            i=0;
+        }
     }
-
-
     return;
 }
 
@@ -2785,16 +2777,10 @@ void setup(void){
     ANSEL = 0;
     ANSELH = 0;
 
-    TRISA = 0;
-    TRISB = 0;
     TRISD = 0;
     TRISDbits.TRISD6=1;
     TRISDbits.TRISD7=1;
-    TRISE = 0;
 
-
-    PORTA = 0;
-    PORTB = 0;
     PORTD = 0;
     I2C_Slave_Init(0x30);
 }

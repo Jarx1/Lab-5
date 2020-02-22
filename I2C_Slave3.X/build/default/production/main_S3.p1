@@ -75,12 +75,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3641 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3641: extern volatile __bit BF __attribute__((address(0x4A0)));
 [v _BF `Vb ~T0 @X0 0 e@1184 ]
-"166
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
-[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 [p mainexit ]
-"54 main_S3.c
-[; ;main_S3.c: 54: void setup(void);
+"51 main_S3.c
+[; ;main_S3.c: 51: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "4199 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4199: extern volatile __bit RD6 __attribute__((address(0x46)));
@@ -94,12 +91,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3449
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"1416
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
-[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
-"1478
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "1602
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
@@ -114,12 +105,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1619
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1619: extern volatile TRISDbits_t TRISDbits __attribute__((address(0x088)));
 [v _TRISDbits `VS58 ~T0 @X0 0 e@136 ]
-"1664
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
-[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
-"228
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "64 ./I2C.h
 [; ;./I2C.h: 64: void I2C_Slave_Init(uint8_t address);
 [v _I2C_Slave_Init `(v ~T0 @X0 0 ef1`uc ]
@@ -399,221 +384,205 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _player2od
 -> -> 0 `i `uc
 ]
-"47
-[; ;main_S3.c: 47: uint8_t dato;
-[v _dato `uc ~T0 @X0 1 e ]
-"48
-[; ;main_S3.c: 48: int c;
-[v _c `i ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"58
-[; ;main_S3.c: 58: void __attribute__((picinterrupt(("")))) isr(void){
+"55
+[; ;main_S3.c: 55: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"59
-[; ;main_S3.c: 59:    if(PIR1bits.SSPIF == 1){
+"56
+[; ;main_S3.c: 56:    if(PIR1bits.SSPIF == 1){
 [e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 139  ]
 {
-"61
-[; ;main_S3.c: 61:         SSPCONbits.CKP = 0;
+"58
+[; ;main_S3.c: 58:         SSPCONbits.CKP = 0;
 [e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
-"63
-[; ;main_S3.c: 63:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+"60
+[; ;main_S3.c: 60:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
 [e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 140  ]
 {
-"64
-[; ;main_S3.c: 64:             z = SSPBUF;
+"61
+[; ;main_S3.c: 61:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"65
-[; ;main_S3.c: 65:             SSPCONbits.SSPOV = 0;
+"62
+[; ;main_S3.c: 62:             SSPCONbits.SSPOV = 0;
 [e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
-"66
-[; ;main_S3.c: 66:             SSPCONbits.WCOL = 0;
+"63
+[; ;main_S3.c: 63:             SSPCONbits.WCOL = 0;
 [e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
-"67
-[; ;main_S3.c: 67:             SSPCONbits.CKP = 1;
+"64
+[; ;main_S3.c: 64:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"68
-[; ;main_S3.c: 68:         }
+"65
+[; ;main_S3.c: 65:         }
 }
 [e :U 140 ]
-"70
-[; ;main_S3.c: 70:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+"67
+[; ;main_S3.c: 67:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 141  ]
 {
-"72
-[; ;main_S3.c: 72:             z = SSPBUF;
+"69
+[; ;main_S3.c: 69:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"74
-[; ;main_S3.c: 74:             PIR1bits.SSPIF = 0;
+"71
+[; ;main_S3.c: 71:             PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"75
-[; ;main_S3.c: 75:             SSPCONbits.CKP = 1;
+"72
+[; ;main_S3.c: 72:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"76
-[; ;main_S3.c: 76:             while(!SSPSTATbits.BF);
+"73
+[; ;main_S3.c: 73:             while(!SSPSTATbits.BF);
 [e $U 142  ]
 [e :U 143 ]
 [e :U 142 ]
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 143  ]
 [e :U 144 ]
-"77
-[; ;main_S3.c: 77:             PORTD = SSPBUF;
+"74
+[; ;main_S3.c: 74:             PORTD = SSPBUF;
 [e = _PORTD _SSPBUF ]
-"78
-[; ;main_S3.c: 78:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+"75
+[; ;main_S3.c: 75:             _delay((unsigned long)((250)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"80
-[; ;main_S3.c: 80:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+"77
+[; ;main_S3.c: 77:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
 }
 [e $U 145  ]
 [e :U 141 ]
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 146  ]
 {
-"81
-[; ;main_S3.c: 81:             z = SSPBUF;
+"78
+[; ;main_S3.c: 78:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"82
-[; ;main_S3.c: 82:             BF = 0;
+"79
+[; ;main_S3.c: 79:             BF = 0;
 [e = _BF -> -> 0 `i `b ]
-"83
-[; ;main_S3.c: 83:             SSPBUF = PORTA;
-[e = _SSPBUF _PORTA ]
-"84
-[; ;main_S3.c: 84:             SSPCONbits.CKP = 1;
+"80
+[; ;main_S3.c: 80:             SSPBUF = i;
+[e = _SSPBUF _i ]
+"81
+[; ;main_S3.c: 81:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"85
-[; ;main_S3.c: 85:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+"82
+[; ;main_S3.c: 82:             _delay((unsigned long)((250)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"86
-[; ;main_S3.c: 86:             while(SSPSTATbits.BF);
+"83
+[; ;main_S3.c: 83:             while(SSPSTATbits.BF);
 [e $U 147  ]
 [e :U 148 ]
 [e :U 147 ]
 [e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 148  ]
 [e :U 149 ]
-"87
-[; ;main_S3.c: 87:         }
+"84
+[; ;main_S3.c: 84:         }
 }
 [e :U 146 ]
 [e :U 145 ]
-"88
-[; ;main_S3.c: 88:         PIR1bits.SSPIF = 0;
+"85
+[; ;main_S3.c: 85:         PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"89
-[; ;main_S3.c: 89:     }
+"86
+[; ;main_S3.c: 86:     }
 }
 [e :U 139 ]
-"92
-[; ;main_S3.c: 92: }
+"87
+[; ;main_S3.c: 87: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"96
-[; ;main_S3.c: 96: void main(void) {
+"91
+[; ;main_S3.c: 91: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"97
-[; ;main_S3.c: 97:     setup();
+"92
+[; ;main_S3.c: 92:     setup();
 [e ( _setup ..  ]
-"101
-[; ;main_S3.c: 101:     while(1){
+"96
+[; ;main_S3.c: 96:     while(1){
 [e :U 152 ]
 {
-"102
-[; ;main_S3.c: 102:         if(RD6==1 && player1od==0){
+"97
+[; ;main_S3.c: 97:         if(RD6==1 && player1od==0){
 [e $ ! && == -> _RD6 `i -> 1 `i == -> _player1od `i -> 0 `i 154  ]
 {
-"103
-[; ;main_S3.c: 103:             PORTA=i;
-[e = _PORTA _i ]
-"104
-[; ;main_S3.c: 104:             i++;
+"98
+[; ;main_S3.c: 98:             i++;
 [e ++ _i -> -> 1 `i `uc ]
-"106
-[; ;main_S3.c: 106:         }
+"99
+[; ;main_S3.c: 99:         }
 }
 [e :U 154 ]
-"107
-[; ;main_S3.c: 107:         player1od=RD6;
+"100
+[; ;main_S3.c: 100:         player1od=RD6;
 [e = _player1od -> _RD6 `uc ]
-"108
-[; ;main_S3.c: 108:         if(RD7==1 && player2od==0){
+"101
+[; ;main_S3.c: 101:         if(RD7==1 && player2od==0){
 [e $ ! && == -> _RD7 `i -> 1 `i == -> _player2od `i -> 0 `i 155  ]
 {
-"109
-[; ;main_S3.c: 109:             PORTA=i;
-[e = _PORTA _i ]
-"110
-[; ;main_S3.c: 110:             i--;
+"102
+[; ;main_S3.c: 102:             i--;
 [e -- _i -> -> 1 `i `uc ]
-"111
-[; ;main_S3.c: 111:         }
+"103
+[; ;main_S3.c: 103:         }
 }
 [e :U 155 ]
-"112
-[; ;main_S3.c: 112:         player2od=RD7;
+"104
+[; ;main_S3.c: 104:         player2od=RD7;
 [e = _player2od -> _RD7 `uc ]
-"114
-[; ;main_S3.c: 114:     }
+"105
+[; ;main_S3.c: 105:         if(i>15){
+[e $ ! > -> _i `i -> 15 `i 156  ]
+{
+"106
+[; ;main_S3.c: 106:             i=0;
+[e = _i -> -> 0 `i `uc ]
+"107
+[; ;main_S3.c: 107:         }
+}
+[e :U 156 ]
+"108
+[; ;main_S3.c: 108:     }
 }
 [e :U 151 ]
 [e $U 152  ]
 [e :U 153 ]
-"117
-[; ;main_S3.c: 117:     return;
+"109
+[; ;main_S3.c: 109:     return;
 [e $UE 150  ]
-"118
-[; ;main_S3.c: 118: }
+"110
+[; ;main_S3.c: 110: }
 [e :UE 150 ]
 }
-"122
-[; ;main_S3.c: 122: void setup(void){
+"114
+[; ;main_S3.c: 114: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"123
-[; ;main_S3.c: 123:     ANSEL = 0;
+"115
+[; ;main_S3.c: 115:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"124
-[; ;main_S3.c: 124:     ANSELH = 0;
+"116
+[; ;main_S3.c: 116:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"126
-[; ;main_S3.c: 126:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
-"127
-[; ;main_S3.c: 127:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"128
-[; ;main_S3.c: 128:     TRISD = 0;
+"118
+[; ;main_S3.c: 118:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"129
-[; ;main_S3.c: 129:     TRISDbits.TRISD6=1;
+"119
+[; ;main_S3.c: 119:     TRISDbits.TRISD6=1;
 [e = . . _TRISDbits 0 6 -> -> 1 `i `uc ]
-"130
-[; ;main_S3.c: 130:     TRISDbits.TRISD7=1;
+"120
+[; ;main_S3.c: 120:     TRISDbits.TRISD7=1;
 [e = . . _TRISDbits 0 7 -> -> 1 `i `uc ]
-"131
-[; ;main_S3.c: 131:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"134
-[; ;main_S3.c: 134:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"135
-[; ;main_S3.c: 135:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"136
-[; ;main_S3.c: 136:     PORTD = 0;
+"122
+[; ;main_S3.c: 122:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"137
-[; ;main_S3.c: 137:     I2C_Slave_Init(0x30);
+"123
+[; ;main_S3.c: 123:     I2C_Slave_Init(0x30);
 [e ( _I2C_Slave_Init (1 -> -> 48 `i `uc ]
-"138
-[; ;main_S3.c: 138: }
-[e :UE 156 ]
+"124
+[; ;main_S3.c: 124: }
+[e :UE 157 ]
 }

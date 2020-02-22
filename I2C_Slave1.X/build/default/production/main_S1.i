@@ -2746,7 +2746,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = PORTB;
+            SSPBUF = dato;
             SSPCONbits.CKP = 1;
             _delay((unsigned long)((250)*(8000000/4000000.0)));
             while(SSPSTATbits.BF);
@@ -2754,11 +2754,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
         PIR1bits.SSPIF = 0;
     }
    if (PIR1bits.ADIF==1){
-        INTCONbits.T0IE=0;
         INTCONbits.GIE=0;
-        INTCONbits.RBIE=0;
-
-        INTCONbits.T0IE=1;
         PIR1bits.ADIF=0;
    }
 }
@@ -2771,12 +2767,10 @@ void main(void) {
 
 
     while(1){
-        PORTB = ADRESH;
+        dato = ADRESH;
         ADCON0bits.GO_DONE=1;
         _delay((unsigned long)((10)*(8000000/4000.0)));
     }
-
-
     return;
 }
 
@@ -2784,17 +2778,11 @@ void main(void) {
 
 void setup(void){
     ANSEL = 0;
-
     ANSELH = 0;
 
-    TRISB = 0;
-    TRISD = 0;
     TRISE = 0;
     TRISEbits.TRISE0 = 1;
 
-
-    PORTB = 0;
-    PORTD = 0;
     ADC_init();
     ADC_conf(0);
 
