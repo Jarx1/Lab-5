@@ -1,4 +1,4 @@
-# 1 "main_M.c"
+# 1 "main_S3.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main_M.c" 2
-# 11 "main_M.c"
+# 1 "main_S3.c" 2
+# 12 "main_S3.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -163,7 +163,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 32 "main_M.c" 2
+# 33 "main_S3.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic16f887.h" 1 3
 # 44 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic16f887.h" 3
@@ -2576,7 +2576,7 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 33 "main_M.c" 2
+# 34 "main_S3.c" 2
 
 # 1 "./I2C.h" 1
 # 18 "./I2C.h"
@@ -2693,43 +2693,89 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 34 "main_M.c" 2
-# 45 "main_M.c"
+# 35 "main_S3.c" 2
+
+
+
+
+
+
+
+
+uint8_t z;
+uint8_t i;
+uint8_t player1od = 0;
+uint8_t player2od = 0;
+uint8_t dato;
+int c;
+
+
+
+
+
 void setup(void);
 
+
+
+void __attribute__((picinterrupt(("")))) isr(void){
+   if(PIR1bits.SSPIF == 1){
+
+        SSPCONbits.CKP = 0;
+
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;
+            SSPCONbits.SSPOV = 0;
+            SSPCONbits.WCOL = 0;
+            SSPCONbits.CKP = 1;
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+
+            z = SSPBUF;
+
+            PIR1bits.SSPIF = 0;
+            SSPCONbits.CKP = 1;
+            while(!SSPSTATbits.BF);
+            PORTD = SSPBUF;
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
+
+        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = PORTA;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
+            while(SSPSTATbits.BF);
+        }
+        PIR1bits.SSPIF = 0;
+    }
+
+
+}
 
 
 
 void main(void) {
     setup();
+
+
+
     while(1){
+        if(RD6==1 && player1od==0){
+            PORTA=i;
+            i++;
 
-
-
-
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x51);
-        PORTD = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x41);
-        PORTA = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x31);
-        PORTB = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
-
+        }
+        player1od=RD6;
+        if(RD7==1 && player2od==0){
+            PORTA=i;
+            i--;
+        }
+        player2od=RD7;
 
     }
+
+
     return;
 }
 
@@ -2742,9 +2788,13 @@ void setup(void){
     TRISA = 0;
     TRISB = 0;
     TRISD = 0;
+    TRISDbits.TRISD6=1;
+    TRISDbits.TRISD7=1;
+    TRISE = 0;
 
+
+    PORTA = 0;
     PORTB = 0;
     PORTD = 0;
-    PORTA = 0;
-    I2C_Master_Init(100000);
+    I2C_Slave_Init(0x30);
 }
