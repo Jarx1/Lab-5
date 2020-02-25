@@ -97,7 +97,6 @@ void main(void) {
     while(1){
         dato = ADRESH;
         ADCON0bits.GO_DONE=1;
-        __delay_ms(10);
     }
     return;
 }
@@ -113,6 +112,7 @@ void setup(void){
 
     ADC_init();
     ADC_conf(0); 
+    OSCCONbits.IRCF = 111;
     
-    I2C_Slave_Init(0x40);   
+    I2C_Slave_Init(0x30);   
 }

@@ -593,8 +593,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_S2.c: 115:     ADC_conf(0);
 [e ( _ADC_conf (1 -> -> 0 `i `uc ]
 "117
-[; ;main_S2.c: 117:     I2C_Slave_Init(0x40);
-[e ( _I2C_Slave_Init (1 -> -> 64 `i `uc ]
+[; ;main_S2.c: 117:     I2C_Slave_Init(0x30);
+[e ( _I2C_Slave_Init (1 -> -> 48 `i `uc ]
 "118
 [; ;main_S2.c: 118: }
 [e :UE 155 ]

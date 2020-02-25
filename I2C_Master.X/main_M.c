@@ -58,22 +58,22 @@ void main(void) {
        
         I2C_Master_Start();
         I2C_Master_Write(0x51);
-        PORTD = I2C_Master_Read(0);
+        PORTB = I2C_Master_Read(0);
         I2C_Master_Stop();
-        __delay_ms(100);
+        __delay_ms(10);
           
         
         I2C_Master_Start();
         I2C_Master_Write(0x41);
         PORTA = I2C_Master_Read(0);
         I2C_Master_Stop();
-        __delay_ms(100);
+        __delay_ms(10);
         
         I2C_Master_Start();
         I2C_Master_Write(0x31);
-        PORTB = I2C_Master_Read(0);
+        PORTD = I2C_Master_Read(0);
         I2C_Master_Stop();
-        __delay_ms(100);
+        __delay_ms(10);
         
         //PORTB++;
     }
@@ -93,5 +93,6 @@ void setup(void){
     PORTB = 0;
     PORTD = 0;
     PORTA = 0;
+    OSCCONbits.IRCF = 111;
     I2C_Master_Init(100000);        // Inicializar Comuncación I2C
 }

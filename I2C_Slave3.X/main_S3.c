@@ -96,15 +96,18 @@ void main(void) {
     while(1){
         if(player1==1 && player1od==0){   //Antirrebote, si el boton player1(RB7)
             i++;                          //incrementa un contador                    
+            if(i>15){
+                i=0;
+            }
         }
         player1od=player1; 
         if(player2==1 && player2od==0){
             i--;
+            if(i>15){
+                i=15;
+            }
         }
         player2od=player2;
-        if(i>15){
-            i=0;
-        }
     } 
     return;
 }
@@ -114,11 +117,14 @@ void main(void) {
 void setup(void){
     ANSEL = 0;
     ANSELH = 0;
-
+    
+    TRISA = 0;
     TRISD = 0;
     TRISDbits.TRISD6=1;
     TRISDbits.TRISD7=1;
-
+    
+    PORTA = 0;
     PORTD = 0;
-    I2C_Slave_Init(0x30);   
+    OSCCONbits.IRCF = 111;
+    I2C_Slave_Init(0x40);   
 }

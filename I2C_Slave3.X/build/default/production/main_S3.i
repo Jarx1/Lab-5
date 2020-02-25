@@ -2767,6 +2767,7 @@ void main(void) {
         if(i>15){
             i=0;
         }
+        PORTA=i;
     }
     return;
 }
@@ -2777,10 +2778,12 @@ void setup(void){
     ANSEL = 0;
     ANSELH = 0;
 
+    TRISA = 0;
     TRISD = 0;
     TRISDbits.TRISD6=1;
     TRISDbits.TRISD7=1;
 
+    PORTA = 0;
     PORTD = 0;
-    I2C_Slave_Init(0x30);
+    I2C_Slave_Init(0x40);
 }

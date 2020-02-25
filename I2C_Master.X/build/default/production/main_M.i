@@ -2711,22 +2711,22 @@ void main(void) {
 
         I2C_Master_Start();
         I2C_Master_Write(0x51);
-        PORTD = I2C_Master_Read(0);
+        PORTB = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((10)*(8000000/4000.0)));
 
 
         I2C_Master_Start();
         I2C_Master_Write(0x41);
         PORTA = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((10)*(8000000/4000.0)));
 
         I2C_Master_Start();
         I2C_Master_Write(0x31);
-        PORTB = I2C_Master_Read(0);
+        PORTD = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((10)*(8000000/4000.0)));
 
 
     }
@@ -2746,5 +2746,6 @@ void setup(void){
     PORTB = 0;
     PORTD = 0;
     PORTA = 0;
+    OSCCONbits.IRCF = 111;
     I2C_Master_Init(100000);
 }

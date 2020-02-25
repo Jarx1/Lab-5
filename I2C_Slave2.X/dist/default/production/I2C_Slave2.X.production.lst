@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Sat Feb 22 15:24:08 2020
+                                                                                               Mon Feb 24 14:33:29 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -617,8 +617,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    603  00B0  120A  118A  207E  120A  118A  	fcall	_ADC_conf
    604  00B5                     l797:	
    605                           
-   606                           ;main_S2.c: 117:     I2C_Slave_Init(0x40);
-   607  00B5  3040               	movlw	64
+   606                           ;main_S2.c: 117:     I2C_Slave_Init(0x30);
+   607  00B5  3030               	movlw	48
    608  00B6  120A  118A  20BC  120A  118A  	fcall	_I2C_Slave_Init
    609  00BB                     l125:	
    610  00BB  0008               	return
@@ -1336,7 +1336,7 @@ DATA                 0      0       A      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Sat Feb 22 15:24:08 2020
+Symbol Table                                                                                   Mon Feb 24 14:33:29 2020
 
           ADC_conf@ADCNum 0075                         _z 0079               __CFG_CP$OFF 0000  
              _SSPSTATbits 0094                        _BF 04A0                        l55 00D5  

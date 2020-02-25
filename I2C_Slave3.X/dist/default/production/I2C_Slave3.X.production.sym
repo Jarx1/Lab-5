@@ -19,9 +19,11 @@ _main 7A 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start C 0 CODE 0
+_TRISA 85 0 ABS 0
 _SSPIE 463 0 ABS 0
 _player1od 76 0 COMMON 1
 _SSPIF 63 0 ABS 0
+_PORTA 5 0 ABS 0
 reset_vec 0 0 CODE 0
 _TRISD 88 0 ABS 0
 _ANSEL 188 0 ABS 0
@@ -34,7 +36,7 @@ __Lconfig 2007 0 CONFIG 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __size_of_isr 0 0 ABS 0
-_setup C6 0 CODE 0
+_setup C8 0 CODE 0
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 _TRISC3 43B 0 ABS 0
@@ -65,7 +67,7 @@ __Lcode 0 0 ABS 0
 saved_w 7E 0 ABS 0
 __Hinit C 0 CODE 0
 __Linit C 0 CODE 0
-__end_of_main AC 0 CODE 0
+__end_of_main AE 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 I2C_Slave_Init@address 73 0 COMMON 1
@@ -89,10 +91,10 @@ ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 _SSPSTAT 94 0 ABS 0
 __Lpowerup 0 0 CODE 0
-__end_of_I2C_Slave_Init C6 0 CODE 0
+__end_of_I2C_Slave_Init C8 0 CODE 0
 _SSPCON2bits 91 0 ABS 0
-__ptext1 C6 0 CODE 0
-__ptext2 AC 0 CODE 0
+__ptext1 C8 0 CODE 0
+__ptext2 AE 0 CODE 0
 __ptext3 17 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
@@ -125,13 +127,13 @@ __pbssCOMMON 75 0 COMMON 1
 _SSPCONbits 14 0 ABS 0
 __Hend_init F 0 CODE 0
 __Lend_init C 0 CODE 0
-__end_of_setup D9 0 CODE 0
+__end_of_setup DD 0 CODE 0
 __Hreset_vec 3 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 intlevel0 0 0 ENTRY 0
 __CFG_WDTE$OFF 0 0 ABS 0
 intlevel1 0 0 ENTRY 0
-_I2C_Slave_Init AC 0 CODE 0
+_I2C_Slave_Init AE 0 CODE 0
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0
 intlevel2 0 0 ENTRY 0
 intlevel3 0 0 ENTRY 0
@@ -151,21 +153,21 @@ __CFG_CP$OFF 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
 %segments
 reset_vec 0 5 CODE 0 0
-intentry 8 1B1 CODE 8 0
+intentry 8 1B9 CODE 8 0
 config 400E 4011 CONFIG 400E 0
 cstackCOMMON 70 78 COMMON 70 1
 %locals
 dist/default/production\I2C_Slave3.X.production.o
-C:\Users\jxica\AppData\Local\Temp\smbo.s
-643 F 0 CODE 0
-646 F 0 CODE 0
-666 F 0 CODE 0
-667 10 0 CODE 0
-668 11 0 CODE 0
-669 12 0 CODE 0
-675 13 0 CODE 0
-677 13 0 CODE 0
-678 14 0 CODE 0
+C:\Users\jxica\AppData\Local\Temp\shtc.s
+647 F 0 CODE 0
+650 F 0 CODE 0
+670 F 0 CODE 0
+671 10 0 CODE 0
+672 11 0 CODE 0
+673 12 0 CODE 0
+679 13 0 CODE 0
+681 13 0 CODE 0
+682 14 0 CODE 0
 main_S3.c
 91 7A 0 CODE 0
 92 7A 0 CODE 0
@@ -177,28 +179,31 @@ main_S3.c
 104 9D 0 CODE 0
 105 A1 0 CODE 0
 106 A7 0 CODE 0
-114 C6 0 CODE 0
-115 C6 0 CODE 0
-116 C9 0 CODE 0
-118 CA 0 CODE 0
-119 CD 0 CODE 0
-120 CE 0 CODE 0
-122 CF 0 CODE 0
-123 D2 0 CODE 0
-124 D8 0 CODE 0
+108 A8 0 CODE 0
+115 C8 0 CODE 0
+116 C8 0 CODE 0
+117 CB 0 CODE 0
+119 CC 0 CODE 0
+120 CF 0 CODE 0
+121 D0 0 CODE 0
+122 D1 0 CODE 0
+124 D2 0 CODE 0
+125 D5 0 CODE 0
+126 D6 0 CODE 0
+127 DC 0 CODE 0
 I2C.c
-93 AC 0 CODE 0
-95 AD 0 CODE 0
-96 B1 0 CODE 0
-97 B5 0 CODE 0
-98 B9 0 CODE 0
-99 BB 0 CODE 0
-100 BC 0 CODE 0
-101 BD 0 CODE 0
-102 BE 0 CODE 0
-103 BF 0 CODE 0
-104 C2 0 CODE 0
-105 C5 0 CODE 0
+93 AE 0 CODE 0
+95 AF 0 CODE 0
+96 B3 0 CODE 0
+97 B7 0 CODE 0
+98 BB 0 CODE 0
+99 BD 0 CODE 0
+100 BE 0 CODE 0
+101 BF 0 CODE 0
+102 C0 0 CODE 0
+103 C1 0 CODE 0
+104 C4 0 CODE 0
+105 C7 0 CODE 0
 main_S3.c
 55 17 0 CODE 0
 56 17 0 CODE 0

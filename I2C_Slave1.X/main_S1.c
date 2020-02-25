@@ -113,6 +113,7 @@ void setup(void){
 
     ADC_init();
     ADC_conf(0); 
+    OSCCONbits.IRCF = 111;
     
     I2C_Slave_Init(0x50);   
 }

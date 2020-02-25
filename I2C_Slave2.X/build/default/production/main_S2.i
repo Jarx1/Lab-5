@@ -2787,5 +2787,5 @@ void setup(void){
     ADC_init();
     ADC_conf(0);
 
-    I2C_Slave_Init(0x40);
+    I2C_Slave_Init(0x30);
 }
