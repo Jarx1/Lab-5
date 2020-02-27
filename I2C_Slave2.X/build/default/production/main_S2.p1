@@ -471,8 +471,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_S2.c: 70:             PORTD = SSPBUF;
 [e = _PORTD _SSPBUF ]
 "71
-[; ;main_S2.c: 71:             _delay((unsigned long)((250)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;main_S2.c: 71:             _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "73
 [; ;main_S2.c: 73:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
 }
@@ -493,8 +493,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_S2.c: 77:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
 "78
-[; ;main_S2.c: 78:             _delay((unsigned long)((250)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;main_S2.c: 78:             _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "79
 [; ;main_S2.c: 79:             while(SSPSTATbits.BF);
 [e $U 147  ]
@@ -553,49 +553,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_S2.c: 99:         ADCON0bits.GO_DONE=1;
 [e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
 "100
-[; ;main_S2.c: 100:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"101
-[; ;main_S2.c: 101:     }
+[; ;main_S2.c: 100:     }
 }
 [e :U 152 ]
 [e $U 153  ]
 [e :U 154 ]
-"102
-[; ;main_S2.c: 102:     return;
+"101
+[; ;main_S2.c: 101:     return;
 [e $UE 151  ]
-"103
-[; ;main_S2.c: 103: }
+"102
+[; ;main_S2.c: 102: }
 [e :UE 151 ]
 }
-"107
-[; ;main_S2.c: 107: void setup(void){
+"106
+[; ;main_S2.c: 106: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"108
-[; ;main_S2.c: 108:     ANSEL = 0;
+"107
+[; ;main_S2.c: 107:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"109
-[; ;main_S2.c: 109:     ANSELH = 0;
+"108
+[; ;main_S2.c: 108:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"111
-[; ;main_S2.c: 111:     TRISE = 0;
+"110
+[; ;main_S2.c: 110:     TRISE = 0;
 [e = _TRISE -> -> 0 `i `uc ]
-"112
-[; ;main_S2.c: 112:     TRISEbits.TRISE0 = 1;
+"111
+[; ;main_S2.c: 111:     TRISEbits.TRISE0 = 1;
 [e = . . _TRISEbits 0 0 -> -> 1 `i `uc ]
-"114
-[; ;main_S2.c: 114:     ADC_init();
+"113
+[; ;main_S2.c: 113:     ADC_init();
 [e ( _ADC_init ..  ]
-"115
-[; ;main_S2.c: 115:     ADC_conf(0);
+"114
+[; ;main_S2.c: 114:     ADC_conf(0);
 [e ( _ADC_conf (1 -> -> 0 `i `uc ]
-"117
-[; ;main_S2.c: 117:     I2C_Slave_Init(0x30);
+"115
+[; ;main_S2.c: 115:     I2C_Slave_Init(0x30);
 [e ( _I2C_Slave_Init (1 -> -> 48 `i `uc ]
-"118
-[; ;main_S2.c: 118: }
+"116
+[; ;main_S2.c: 116: }
 [e :UE 155 ]
 }

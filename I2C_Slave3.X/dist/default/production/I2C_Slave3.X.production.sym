@@ -15,7 +15,7 @@ __pintentry 4 0 CODE 0
 _isr 17 0 CODE 0
 _PEIE 5E 0 ABS 0
 __CFG_BOR4V$BOR40V 0 0 ABS 0
-_main 7A 0 CODE 0
+_main 78 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start C 0 CODE 0
@@ -36,7 +36,7 @@ __Lconfig 2007 0 CONFIG 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __size_of_isr 0 0 ABS 0
-_setup C8 0 CODE 0
+_setup D0 0 CODE 0
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 _TRISC3 43B 0 ABS 0
@@ -67,7 +67,7 @@ __Lcode 0 0 ABS 0
 saved_w 7E 0 ABS 0
 __Hinit C 0 CODE 0
 __Linit C 0 CODE 0
-__end_of_main AE 0 CODE 0
+__end_of_main B6 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 I2C_Slave_Init@address 73 0 COMMON 1
@@ -91,10 +91,10 @@ ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 _SSPSTAT 94 0 ABS 0
 __Lpowerup 0 0 CODE 0
-__end_of_I2C_Slave_Init C8 0 CODE 0
+__end_of_I2C_Slave_Init D0 0 CODE 0
 _SSPCON2bits 91 0 ABS 0
-__ptext1 C8 0 CODE 0
-__ptext2 AE 0 CODE 0
+__ptext1 D0 0 CODE 0
+__ptext2 B6 0 CODE 0
 __ptext3 17 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
@@ -106,7 +106,7 @@ __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 __Hspace_0 2009 0 ABS 0
 __Lspace_0 0 0 ABS 0
-__end_of_isr 7A 0 CODE 0
+__end_of_isr 78 0 CODE 0
 __Hspace_1 79 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __size_of_setup 0 0 ABS 0
@@ -127,13 +127,13 @@ __pbssCOMMON 75 0 COMMON 1
 _SSPCONbits 14 0 ABS 0
 __Hend_init F 0 CODE 0
 __Lend_init C 0 CODE 0
-__end_of_setup DD 0 CODE 0
+__end_of_setup E5 0 CODE 0
 __Hreset_vec 3 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 intlevel0 0 0 ENTRY 0
 __CFG_WDTE$OFF 0 0 ABS 0
 intlevel1 0 0 ENTRY 0
-_I2C_Slave_Init AE 0 CODE 0
+_I2C_Slave_Init B6 0 CODE 0
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0
 intlevel2 0 0 ENTRY 0
 intlevel3 0 0 ENTRY 0
@@ -147,18 +147,18 @@ start_initialization F 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
 __CFG_IESO$OFF 0 0 ABS 0
-__pmaintext 7A 0 CODE 0
+__pmaintext 78 0 CODE 0
 __initialization F 0 CODE 0
 __CFG_CP$OFF 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
 %segments
 reset_vec 0 5 CODE 0 0
-intentry 8 1B9 CODE 8 0
+intentry 8 1C9 CODE 8 0
 config 400E 4011 CONFIG 400E 0
 cstackCOMMON 70 78 COMMON 70 1
 %locals
 dist/default/production\I2C_Slave3.X.production.o
-C:\Users\jxica\AppData\Local\Temp\shtc.s
+C:\Users\jxica\AppData\Local\Temp\s7u0.s
 647 F 0 CODE 0
 650 F 0 CODE 0
 670 F 0 CODE 0
@@ -169,41 +169,43 @@ C:\Users\jxica\AppData\Local\Temp\shtc.s
 681 13 0 CODE 0
 682 14 0 CODE 0
 main_S3.c
-91 7A 0 CODE 0
-92 7A 0 CODE 0
-97 7F 0 CODE 0
-98 8A 0 CODE 0
-100 8E 0 CODE 0
-101 92 0 CODE 0
-102 9B 0 CODE 0
-104 9D 0 CODE 0
-105 A1 0 CODE 0
-106 A7 0 CODE 0
-108 A8 0 CODE 0
-115 C8 0 CODE 0
-116 C8 0 CODE 0
-117 CB 0 CODE 0
-119 CC 0 CODE 0
-120 CF 0 CODE 0
-121 D0 0 CODE 0
-122 D1 0 CODE 0
-124 D2 0 CODE 0
-125 D5 0 CODE 0
-126 D6 0 CODE 0
-127 DC 0 CODE 0
+91 78 0 CODE 0
+92 78 0 CODE 0
+97 7D 0 CODE 0
+98 88 0 CODE 0
+99 8C 0 CODE 0
+100 92 0 CODE 0
+103 93 0 CODE 0
+104 97 0 CODE 0
+105 A0 0 CODE 0
+106 A2 0 CODE 0
+107 A8 0 CODE 0
+110 AC 0 CODE 0
+111 B0 0 CODE 0
+118 D0 0 CODE 0
+119 D0 0 CODE 0
+120 D3 0 CODE 0
+122 D4 0 CODE 0
+123 D7 0 CODE 0
+124 D8 0 CODE 0
+125 D9 0 CODE 0
+127 DA 0 CODE 0
+128 DD 0 CODE 0
+130 DE 0 CODE 0
+131 E4 0 CODE 0
 I2C.c
-93 AE 0 CODE 0
-95 AF 0 CODE 0
-96 B3 0 CODE 0
-97 B7 0 CODE 0
-98 BB 0 CODE 0
-99 BD 0 CODE 0
-100 BE 0 CODE 0
-101 BF 0 CODE 0
-102 C0 0 CODE 0
-103 C1 0 CODE 0
-104 C4 0 CODE 0
-105 C7 0 CODE 0
+93 B6 0 CODE 0
+95 B7 0 CODE 0
+96 BB 0 CODE 0
+97 BF 0 CODE 0
+98 C3 0 CODE 0
+99 C5 0 CODE 0
+100 C6 0 CODE 0
+101 C7 0 CODE 0
+102 C8 0 CODE 0
+103 C9 0 CODE 0
+104 CC 0 CODE 0
+105 CF 0 CODE 0
 main_S3.c
 55 17 0 CODE 0
 56 17 0 CODE 0
@@ -220,14 +222,14 @@ main_S3.c
 73 3F 0 CODE 0
 74 45 0 CODE 0
 75 49 0 CODE 0
-77 4E 0 CODE 0
-78 57 0 CODE 0
-79 5D 0 CODE 0
-80 60 0 CODE 0
-81 64 0 CODE 0
-82 65 0 CODE 0
-83 6A 0 CODE 0
-84 70 0 CODE 0
-85 70 0 CODE 0
-87 73 0 CODE 0
+77 4D 0 CODE 0
+78 56 0 CODE 0
+79 5C 0 CODE 0
+80 5F 0 CODE 0
+81 63 0 CODE 0
+82 64 0 CODE 0
+83 68 0 CODE 0
+84 6E 0 CODE 0
+85 6E 0 CODE 0
+87 71 0 CODE 0
 55 4 0 CODE 0

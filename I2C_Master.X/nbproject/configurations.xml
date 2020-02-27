@@ -22,6 +22,7 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
     <itemPath>I2C.c</itemPath>
+    <itemPath>LCD.c</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

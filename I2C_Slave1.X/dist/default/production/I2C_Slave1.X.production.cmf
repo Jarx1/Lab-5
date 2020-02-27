@@ -11,21 +11,21 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\jxica\AppData\Local\Temp\si3g.o
-reset_vec CODE 0 0 0 3 2
-end_init CODE 0 C C 3 2
-config CONFIG 0 2007 2007 2 2
 $dist/default/production\I2C_Slave1.X.production.o
 cinit CODE 0 F F 6 2
-text1 CODE 0 A2 A2 1A 2
-text2 CODE 0 BC BC 1A 2
-text3 CODE 0 EF EF 17 2
-text4 CODE 0 7E 7E 24 2
-text5 CODE 0 15 15 69 2
-maintext CODE 0 D6 D6 19 2
+text1 CODE 0 A0 A0 1A 2
+text2 CODE 0 BA BA 1A 2
+text3 CODE 0 ED ED 17 2
+text4 CODE 0 7C 7C 24 2
+text5 CODE 0 15 15 67 2
+maintext CODE 0 D4 D4 19 2
 cstackCOMMON COMMON 1 70 70 8 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 78 78 2 1
+$C:\Users\jxica\AppData\Local\Temp\s84.o
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 C C 3 2
+config CONFIG 0 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -41,13 +41,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 106-1FFF 2
+CONST 104-1FFF 2
 ENTRY 3-3 2
-ENTRY 106-1FFF 2
+ENTRY 104-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 106-1FFF 2
+CODE 104-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -55,9 +55,9 @@ SFR3 180-18F 1
 COMMON 7A-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 106-1FFF 2
+STRCODE 104-1FFF 2
 STRING 3-3 2
-STRING 106-1FFF 2
+STRING 104-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -72,13 +72,13 @@ STRING 106-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\I2C_Slave1.X.production.o
-F cinit CODE >807:C:\Users\jxica\AppData\Local\Temp\si3g.s
-F cinit CODE >810:C:\Users\jxica\AppData\Local\Temp\si3g.s
-F cinit CODE >824:C:\Users\jxica\AppData\Local\Temp\si3g.s
-10 cinit CODE >825:C:\Users\jxica\AppData\Local\Temp\si3g.s
-11 cinit CODE >831:C:\Users\jxica\AppData\Local\Temp\si3g.s
-11 cinit CODE >833:C:\Users\jxica\AppData\Local\Temp\si3g.s
-12 cinit CODE >834:C:\Users\jxica\AppData\Local\Temp\si3g.s
+F cinit CODE >807:C:\Users\jxica\AppData\Local\Temp\s84.s
+F cinit CODE >810:C:\Users\jxica\AppData\Local\Temp\s84.s
+F cinit CODE >824:C:\Users\jxica\AppData\Local\Temp\s84.s
+10 cinit CODE >825:C:\Users\jxica\AppData\Local\Temp\s84.s
+11 cinit CODE >831:C:\Users\jxica\AppData\Local\Temp\s84.s
+11 cinit CODE >833:C:\Users\jxica\AppData\Local\Temp\s84.s
+12 cinit CODE >834:C:\Users\jxica\AppData\Local\Temp\s84.s
 4 intentry CODE >52:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
 15 text5 CODE >52:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
 15 text5 CODE >53:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
@@ -95,76 +95,76 @@ F cinit CODE >824:C:\Users\jxica\AppData\Local\Temp\si3g.s
 3D text5 CODE >70:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
 43 text5 CODE >71:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
 47 text5 CODE >72:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-4C text5 CODE >74:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-55 text5 CODE >75:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-5B text5 CODE >76:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-5E text5 CODE >77:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-62 text5 CODE >78:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-63 text5 CODE >79:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-68 text5 CODE >80:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-6E text5 CODE >81:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-6E text5 CODE >82:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-71 text5 CODE >83:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-71 text5 CODE >84:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-75 text5 CODE >85:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-76 text5 CODE >86:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-77 text5 CODE >88:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-7E text4 CODE >14:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-7F text4 CODE >15:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-80 text4 CODE >16:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-80 text4 CODE >19:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-83 text4 CODE >20:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-84 text4 CODE >21:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-85 text4 CODE >22:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-86 text4 CODE >23:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-87 text4 CODE >25:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-87 text4 CODE >28:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-8A text4 CODE >29:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-8B text4 CODE >30:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-8C text4 CODE >31:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-8D text4 CODE >32:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-8E text4 CODE >33:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-9E text4 CODE >34:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-A1 text4 CODE >36:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-EF text3 CODE >38:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-EF text3 CODE >40:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-F2 text3 CODE >41:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-F3 text3 CODE >42:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-F4 text3 CODE >44:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-F7 text3 CODE >45:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-FA text3 CODE >47:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-FE text3 CODE >48:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-FF text3 CODE >50:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-100 text3 CODE >52:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-103 text3 CODE >54:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-104 text3 CODE >55:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-105 text3 CODE >56:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
-BC text2 CODE >93:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-BD text2 CODE >95:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-C1 text2 CODE >96:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-C5 text2 CODE >97:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-C9 text2 CODE >98:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-CB text2 CODE >99:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-CC text2 CODE >100:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-CD text2 CODE >101:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-CE text2 CODE >102:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-CF text2 CODE >103:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-D2 text2 CODE >104:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-D5 text2 CODE >105:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
-A2 text1 CODE >107:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-A2 text1 CODE >108:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-A5 text1 CODE >109:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-A6 text1 CODE >111:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-A9 text1 CODE >112:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-AA text1 CODE >114:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-AF text1 CODE >115:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-B5 text1 CODE >117:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-BB text1 CODE >118:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-D6 maintext CODE >92:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-D6 maintext CODE >93:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-DB maintext CODE >98:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-E1 maintext CODE >99:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
-E2 maintext CODE >100:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+4B text5 CODE >74:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+54 text5 CODE >75:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+5A text5 CODE >76:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+5D text5 CODE >77:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+61 text5 CODE >78:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+62 text5 CODE >79:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+66 text5 CODE >80:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+6C text5 CODE >81:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+6C text5 CODE >82:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+6F text5 CODE >83:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+6F text5 CODE >84:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+73 text5 CODE >85:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+74 text5 CODE >86:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+75 text5 CODE >88:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+7C text4 CODE >14:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+7D text4 CODE >15:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+7E text4 CODE >16:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+7E text4 CODE >19:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+81 text4 CODE >20:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+82 text4 CODE >21:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+83 text4 CODE >22:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+84 text4 CODE >23:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+85 text4 CODE >25:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+85 text4 CODE >28:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+88 text4 CODE >29:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+89 text4 CODE >30:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+8A text4 CODE >31:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+8B text4 CODE >32:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+8C text4 CODE >33:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+9C text4 CODE >34:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+9F text4 CODE >36:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+ED text3 CODE >38:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+ED text3 CODE >40:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+F0 text3 CODE >41:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+F1 text3 CODE >42:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+F2 text3 CODE >44:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+F5 text3 CODE >45:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+F8 text3 CODE >47:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+FC text3 CODE >48:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+FD text3 CODE >50:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+FE text3 CODE >52:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+101 text3 CODE >54:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+102 text3 CODE >55:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+103 text3 CODE >56:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\ADC.c
+BA text2 CODE >93:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+BB text2 CODE >95:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+BF text2 CODE >96:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+C3 text2 CODE >97:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+C7 text2 CODE >98:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+C9 text2 CODE >99:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+CA text2 CODE >100:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+CB text2 CODE >101:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+CC text2 CODE >102:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+CD text2 CODE >103:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+D0 text2 CODE >104:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+D3 text2 CODE >105:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\I2C.c
+A0 text1 CODE >107:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+A0 text1 CODE >108:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+A3 text1 CODE >109:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+A4 text1 CODE >111:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+A7 text1 CODE >112:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+A8 text1 CODE >114:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+AD text1 CODE >115:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+B3 text1 CODE >116:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+B9 text1 CODE >117:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+D4 maintext CODE >92:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+D4 maintext CODE >93:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+D9 maintext CODE >98:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+DF maintext CODE >99:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
+E0 maintext CODE >100:C:\Users\jxica\Google Drive\Septimo Semestre\Digital 2\Lab 5\Lab-5\I2C_Slave1.X\main_S1.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -188,11 +188,11 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _BF 4A0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\jxica\AppData\Local\Temp\si3g.o
+___sp 0 0 STACK 2 stack C:\Users\jxica\AppData\Local\Temp\s84.o
 _dato 78 0 COMMON 1 bssCOMMON dist/default/production\I2C_Slave1.X.production.o
-_main 1AC 0 CODE 0 maintext dist/default/production\I2C_Slave1.X.production.o
+_main 1A8 0 CODE 0 maintext dist/default/production\I2C_Slave1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
-start 18 0 CODE 0 init C:\Users\jxica\AppData\Local\Temp\si3g.o
+start 18 0 CODE 0 init C:\Users\jxica\AppData\Local\Temp\s84.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -200,12 +200,12 @@ ADC_conf@ADCNum 75 0 COMMON 1 cstackCOMMON dist/default/production\I2C_Slave1.X.
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_ADC_conf 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __size_of_ADC_init 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\si3g.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\si3g.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\si3g.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\si3g.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\si3g.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\si3g.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\s84.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\s84.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\s84.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\s84.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\s84.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\jxica\AppData\Local\Temp\s84.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -214,13 +214,13 @@ _ADRESH 1E 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 _SSPCONbits 14 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-_ADC_conf FC 0 CODE 0 text4 dist/default/production\I2C_Slave1.X.production.o
-_ADC_init 1DE 0 CODE 0 text3 dist/default/production\I2C_Slave1.X.production.o
-__end_of_ADC_conf 144 0 CODE 0 text4 dist/default/production\I2C_Slave1.X.production.o
-__end_of_ADC_init 20C 0 CODE 0 text3 dist/default/production\I2C_Slave1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\jxica\AppData\Local\Temp\si3g.o
-___stacklo 0 0 ABS 0 - C:\Users\jxica\AppData\Local\Temp\si3g.o
-_I2C_Slave_Init 178 0 CODE 0 text2 dist/default/production\I2C_Slave1.X.production.o
+_ADC_conf F8 0 CODE 0 text4 dist/default/production\I2C_Slave1.X.production.o
+_ADC_init 1DA 0 CODE 0 text3 dist/default/production\I2C_Slave1.X.production.o
+__end_of_ADC_conf 140 0 CODE 0 text4 dist/default/production\I2C_Slave1.X.production.o
+__end_of_ADC_init 208 0 CODE 0 text3 dist/default/production\I2C_Slave1.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\jxica\AppData\Local\Temp\s84.o
+___stacklo 0 0 ABS 0 - C:\Users\jxica\AppData\Local\Temp\s84.o
+_I2C_Slave_Init 174 0 CODE 0 text2 dist/default/production\I2C_Slave1.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
@@ -232,13 +232,13 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\jxica\AppData\Local\Temp\si3g.o
+___int_sp 0 0 STACK 2 stack C:\Users\jxica\AppData\Local\Temp\s84.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 2A 0 CODE 0 cinit -
-__end_of_I2C_Slave_Init 1AC 0 CODE 0 text2 dist/default/production\I2C_Slave1.X.production.o
+__end_of_I2C_Slave_Init 1A8 0 CODE 0 text2 dist/default/production\I2C_Slave1.X.production.o
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
@@ -278,11 +278,11 @@ _isr 2A 0 CODE 0 text5 dist/default/production\I2C_Slave1.X.production.o
 __CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
-__end_of_isr FC 0 CODE 0 text5 dist/default/production\I2C_Slave1.X.production.o
+__end_of_isr F8 0 CODE 0 text5 dist/default/production\I2C_Slave1.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\jxica\AppData\Local\Temp\si3g.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\jxica\AppData\Local\Temp\s84.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
-__pmaintext 1AC 0 CODE 0 maintext dist/default/production\I2C_Slave1.X.production.o
+__pmaintext 1A8 0 CODE 0 maintext dist/default/production\I2C_Slave1.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
@@ -304,10 +304,10 @@ __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
-__ptext1 144 0 CODE 0 text1 dist/default/production\I2C_Slave1.X.production.o
-__ptext2 178 0 CODE 0 text2 dist/default/production\I2C_Slave1.X.production.o
-__ptext3 1DE 0 CODE 0 text3 dist/default/production\I2C_Slave1.X.production.o
-__ptext4 FC 0 CODE 0 text4 dist/default/production\I2C_Slave1.X.production.o
+__ptext1 140 0 CODE 0 text1 dist/default/production\I2C_Slave1.X.production.o
+__ptext2 174 0 CODE 0 text2 dist/default/production\I2C_Slave1.X.production.o
+__ptext3 1DA 0 CODE 0 text3 dist/default/production\I2C_Slave1.X.production.o
+__ptext4 F8 0 CODE 0 text4 dist/default/production\I2C_Slave1.X.production.o
 __ptext5 2A 0 CODE 0 text5 dist/default/production\I2C_Slave1.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
@@ -321,18 +321,18 @@ __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\I2C_Slave1.X.
 _SSPCON2 91 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 1DE 0 CODE 0 maintext dist/default/production\I2C_Slave1.X.production.o
+__end_of_main 1DA 0 CODE 0 maintext dist/default/production\I2C_Slave1.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 _SSPIE 463 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 _SSPIF 63 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
-__end_of_setup 178 0 CODE 0 text1 dist/default/production\I2C_Slave1.X.production.o
+__end_of_setup 174 0 CODE 0 text1 dist/default/production\I2C_Slave1.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\I2C_Slave1.X.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
-_setup 144 0 CODE 0 text1 dist/default/production\I2C_Slave1.X.production.o
+_setup 140 0 CODE 0 text1 dist/default/production\I2C_Slave1.X.production.o
 _SSPSTATbits 94 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\I2C_Slave1.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
@@ -365,7 +365,7 @@ __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\I2C_Slave1.X.production.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 A 1
-intentry 0 4 8 102 2
+intentry 0 4 8 100 2
 reset_vec 0 0 0 3 2
 config 0 2007 400E 2 2
 # OTES Section

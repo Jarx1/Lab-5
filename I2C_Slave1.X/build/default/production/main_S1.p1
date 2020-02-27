@@ -471,8 +471,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_S1.c: 71:             PORTD = SSPBUF;
 [e = _PORTD _SSPBUF ]
 "72
-[; ;main_S1.c: 72:             _delay((unsigned long)((250)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;main_S1.c: 72:             _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "74
 [; ;main_S1.c: 74:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
 }
@@ -493,8 +493,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_S1.c: 78:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
 "79
-[; ;main_S1.c: 79:             _delay((unsigned long)((250)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;main_S1.c: 79:             _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "80
 [; ;main_S1.c: 80:             while(SSPSTATbits.BF);
 [e $U 147  ]
@@ -553,8 +553,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_S1.c: 99:         ADCON0bits.GO_DONE=1;
 [e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
 "100
-[; ;main_S1.c: 100:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main_S1.c: 100:         _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "101
 [; ;main_S1.c: 101:     }
 }
@@ -592,10 +592,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "115
 [; ;main_S1.c: 115:     ADC_conf(0);
 [e ( _ADC_conf (1 -> -> 0 `i `uc ]
-"117
-[; ;main_S1.c: 117:     I2C_Slave_Init(0x50);
+"116
+[; ;main_S1.c: 116:     I2C_Slave_Init(0x50);
 [e ( _I2C_Slave_Init (1 -> -> 80 `i `uc ]
-"118
-[; ;main_S1.c: 118: }
+"117
+[; ;main_S1.c: 117: }
 [e :UE 155 ]
 }

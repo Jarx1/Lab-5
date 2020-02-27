@@ -2741,14 +2741,14 @@ void __attribute__((picinterrupt(("")))) isr(void){
             SSPCONbits.CKP = 1;
             while(!SSPSTATbits.BF);
             PORTD = SSPBUF;
-            _delay((unsigned long)((250)*(8000000/4000000.0)));
+            _delay((unsigned long)((250)*(4000000/4000000.0)));
 
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
             SSPBUF = dato;
             SSPCONbits.CKP = 1;
-            _delay((unsigned long)((250)*(8000000/4000000.0)));
+            _delay((unsigned long)((250)*(4000000/4000000.0)));
             while(SSPSTATbits.BF);
         }
         PIR1bits.SSPIF = 0;
@@ -2770,7 +2770,6 @@ void main(void) {
     while(1){
         dato = ADRESH;
         ADCON0bits.GO_DONE=1;
-        _delay((unsigned long)((10)*(8000000/4000.0)));
     }
     return;
 }
@@ -2786,6 +2785,5 @@ void setup(void){
 
     ADC_init();
     ADC_conf(0);
-
     I2C_Slave_Init(0x30);
 }

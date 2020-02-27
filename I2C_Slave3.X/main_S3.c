@@ -37,7 +37,7 @@
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 4000000
 #define player1 RD6
 #define player2 RD7
 uint8_t z;
@@ -108,6 +108,7 @@ void main(void) {
             }
         }
         player2od=player2;
+        PORTA = i;
     } 
     return;
 }
@@ -125,6 +126,6 @@ void setup(void){
     
     PORTA = 0;
     PORTD = 0;
-    OSCCONbits.IRCF = 111;
+
     I2C_Slave_Init(0x40);   
 }

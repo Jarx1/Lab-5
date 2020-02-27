@@ -32,50 +32,109 @@
 #include <stdint.h>
 #include <pic16f887.h>
 #include "I2C.h"
+#include "LCD.h"
 #include <xc.h>
+ #include <stdio.h>
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 4000000
 
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void setup(void);
+float d1 = 0;
+uint8_t d2; 
+float d3 = 0;
+uint8_t od3;
+uint8_t dd3;
+uint8_t d3_1;
+uint8_t od1;
+uint8_t dd1;
+uint8_t d1_1;
+uint8_t v1;
+uint8_t dent1;
+uint8_t int1;
+
+
 
 //*****************************************************************************
 // Main
 //*****************************************************************************
 void main(void) {
     setup();
+    //Lcd_Clear();
+    Lcd_Set_Cursor(1,1);                //SE DEFINEN LOS VALORES ESTATICOS DE LA LCD
+    Lcd_Write_String ("S1");
+    Lcd_Set_Cursor(7,1);
+    Lcd_Write_String ("S2");
+    Lcd_Set_Cursor(13,1);
+    Lcd_Write_String ("S3");
     while(1){
-        /*I2C_Master_Start();
-        I2C_Master_Write(0x50);
-        I2C_Master_Write(PORTB);
-        I2C_Master_Stop();
-        __delay_ms(100);*/
-       
+        
         I2C_Master_Start();
         I2C_Master_Write(0x51);
-        PORTB = I2C_Master_Read(0);
+        d3 = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(10);
           
         
         I2C_Master_Start();
         I2C_Master_Write(0x41);
-        PORTA = I2C_Master_Read(0);
+        d2 = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(10);
         
         I2C_Master_Start();
         I2C_Master_Write(0x31);
-        PORTD = I2C_Master_Read(0);
+        d1 = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(10);
         
-        //PORTB++;
+        
+        d3 = d3 * 5/255;
+        od3 = d3;
+        dd3 = (d3 - od3)*100;
+        d3_1 = dd3;
+        
+        Lcd_Set_Cursor(1,2);            //MUESTRA EL VALOR DEL POTENCIOMETRO EN LA LCD
+        Lcd_Write_Int(od3);
+        Lcd_Write_Char('.');
+        if (d3_1 >= 10){
+            Lcd_Write_Int(d3_1);
+        }else{
+            Lcd_Write_Char('0');
+            Lcd_Write_Int(d3_1);
+        }
+        
+        d1 = d1 * 5/255;
+        od1 = d1;
+        dd1 = (d1 - od1)*100;
+        d1_1 = dd1;
+        
+        Lcd_Set_Cursor(13,2);            //MUESTRA EL VALOR DEL POTENCIOMETRO EN LA LCD
+        Lcd_Write_Int(od1);
+        Lcd_Write_Char('.');
+        if (d3_1 >= 10){
+            Lcd_Write_Int(d1_1);
+        }else{
+            Lcd_Write_Char('0');
+            Lcd_Write_Int(d1_1);
+        }
+        
+        if(d2 < 10){                 //MUESTRA EL VALOR DEL CONTADOR EN LA LCD
+            Lcd_Set_Cursor(7,2);
+            Lcd_Write_String("0");
+            Lcd_Write_Int(d2);
+        }else{
+            Lcd_Set_Cursor(7,2);
+            Lcd_Write_Int(d2);
+        }
+
+        
+        
     }
     return;
 }
@@ -91,8 +150,10 @@ void setup(void){
     TRISD = 0;
     
     PORTB = 0;
-    PORTD = 0;
     PORTA = 0;
-    OSCCONbits.IRCF = 111;
+    PORTD = 0;
+    initLCD();  
+    Lcd_Clear();
+ //   OSCCONbits.IRCF = 111;
     I2C_Master_Init(100000);        // Inicializar Comuncación I2C
 }

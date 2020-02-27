@@ -448,8 +448,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_S3.c: 74:             PORTD = SSPBUF;
 [e = _PORTD _SSPBUF ]
 "75
-[; ;main_S3.c: 75:             _delay((unsigned long)((250)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;main_S3.c: 75:             _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "77
 [; ;main_S3.c: 77:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
 }
@@ -470,8 +470,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_S3.c: 81:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
 "82
-[; ;main_S3.c: 82:             _delay((unsigned long)((250)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;main_S3.c: 82:             _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "83
 [; ;main_S3.c: 83:             while(SSPSTATbits.BF);
 [e $U 147  ]
@@ -517,87 +517,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main_S3.c: 98:             i++;
 [e ++ _i -> -> 1 `i `uc ]
 "99
-[; ;main_S3.c: 99:         }
-}
-[e :U 154 ]
-"100
-[; ;main_S3.c: 100:         player1od=RD6;
-[e = _player1od -> _RD6 `uc ]
-"101
-[; ;main_S3.c: 101:         if(RD7==1 && player2od==0){
-[e $ ! && == -> _RD7 `i -> 1 `i == -> _player2od `i -> 0 `i 155  ]
+[; ;main_S3.c: 99:             if(i>15){
+[e $ ! > -> _i `i -> 15 `i 155  ]
 {
-"102
-[; ;main_S3.c: 102:             i--;
-[e -- _i -> -> 1 `i `uc ]
-"103
-[; ;main_S3.c: 103:         }
+"100
+[; ;main_S3.c: 100:                 i=0;
+[e = _i -> -> 0 `i `uc ]
+"101
+[; ;main_S3.c: 101:             }
 }
 [e :U 155 ]
+"102
+[; ;main_S3.c: 102:         }
+}
+[e :U 154 ]
+"103
+[; ;main_S3.c: 103:         player1od=RD6;
+[e = _player1od -> _RD6 `uc ]
 "104
-[; ;main_S3.c: 104:         player2od=RD7;
-[e = _player2od -> _RD7 `uc ]
-"105
-[; ;main_S3.c: 105:         if(i>15){
-[e $ ! > -> _i `i -> 15 `i 156  ]
+[; ;main_S3.c: 104:         if(RD7==1 && player2od==0){
+[e $ ! && == -> _RD7 `i -> 1 `i == -> _player2od `i -> 0 `i 156  ]
 {
+"105
+[; ;main_S3.c: 105:             i--;
+[e -- _i -> -> 1 `i `uc ]
 "106
-[; ;main_S3.c: 106:             i=0;
-[e = _i -> -> 0 `i `uc ]
+[; ;main_S3.c: 106:             if(i>15){
+[e $ ! > -> _i `i -> 15 `i 157  ]
+{
 "107
-[; ;main_S3.c: 107:         }
+[; ;main_S3.c: 107:                 i=15;
+[e = _i -> -> 15 `i `uc ]
+"108
+[; ;main_S3.c: 108:             }
+}
+[e :U 157 ]
+"109
+[; ;main_S3.c: 109:         }
 }
 [e :U 156 ]
-"108
-[; ;main_S3.c: 108:         PORTA=i;
+"110
+[; ;main_S3.c: 110:         player2od=RD7;
+[e = _player2od -> _RD7 `uc ]
+"111
+[; ;main_S3.c: 111:         PORTA = i;
 [e = _PORTA _i ]
-"109
-[; ;main_S3.c: 109:     }
+"112
+[; ;main_S3.c: 112:     }
 }
 [e :U 151 ]
 [e $U 152  ]
 [e :U 153 ]
-"110
-[; ;main_S3.c: 110:     return;
+"113
+[; ;main_S3.c: 113:     return;
 [e $UE 150  ]
-"111
-[; ;main_S3.c: 111: }
+"114
+[; ;main_S3.c: 114: }
 [e :UE 150 ]
 }
-"115
-[; ;main_S3.c: 115: void setup(void){
+"118
+[; ;main_S3.c: 118: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"116
-[; ;main_S3.c: 116:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
-"117
-[; ;main_S3.c: 117:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
 "119
-[; ;main_S3.c: 119:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
+[; ;main_S3.c: 119:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
 "120
-[; ;main_S3.c: 120:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"121
-[; ;main_S3.c: 121:     TRISDbits.TRISD6=1;
-[e = . . _TRISDbits 0 6 -> -> 1 `i `uc ]
+[; ;main_S3.c: 120:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
 "122
-[; ;main_S3.c: 122:     TRISDbits.TRISD7=1;
-[e = . . _TRISDbits 0 7 -> -> 1 `i `uc ]
+[; ;main_S3.c: 122:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
+"123
+[; ;main_S3.c: 123:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "124
-[; ;main_S3.c: 124:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;main_S3.c: 124:     TRISDbits.TRISD6=1;
+[e = . . _TRISDbits 0 6 -> -> 1 `i `uc ]
 "125
-[; ;main_S3.c: 125:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"126
-[; ;main_S3.c: 126:     I2C_Slave_Init(0x40);
-[e ( _I2C_Slave_Init (1 -> -> 64 `i `uc ]
+[; ;main_S3.c: 125:     TRISDbits.TRISD7=1;
+[e = . . _TRISDbits 0 7 -> -> 1 `i `uc ]
 "127
-[; ;main_S3.c: 127: }
-[e :UE 157 ]
+[; ;main_S3.c: 127:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"128
+[; ;main_S3.c: 128:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"130
+[; ;main_S3.c: 130:     I2C_Slave_Init(0x40);
+[e ( _I2C_Slave_Init (1 -> -> 64 `i `uc ]
+"131
+[; ;main_S3.c: 131: }
+[e :UE 158 ]
 }
